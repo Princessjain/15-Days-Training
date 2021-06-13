@@ -1,0 +1,35 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
+
+def homepageview(request):
+    return render(request, 'Home.html')
+
+def aboutpageview(request):
+    return render(request, 'about.html')
+
+
+def contactpageview(request):
+    return render(request, 'contact.html')
+
+def myform(request):
+    return render(request, 'myform.html')
+
+def Registrationform(request):
+    return render(request, 'Registrationform.html')
+
+def Signup(request):
+    return render(request, 'Signup.html')
+
+def process(request):
+    print("Hello")
+    print(request.method)
+    print(request.POST)
+    a = str(request.POST['Name'])
+    b = str(request.POST['email'])
+    c = int(request.POST['number'])
+    d= str(request.POST['Password'])
+    e = str(request.POST['Gender'])
+    f = str(request.POST['City'])
+
+    return render(request, 'ans2.html', {'mya': a, 'myb': b, 'myc': c,'myd': d, 'mye': e,'myf': f})
